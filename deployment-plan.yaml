@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+# https://docs.attini.io/getting-started/create-your-first-deployment-plan.html
+Transform:
+  - AttiniDeploymentPlan
+  - AWS::Serverless-2016-10-31
+
+Parameters:
+  AttiniEnvironmentName: # This is automatically configured by the Attini Framework, find more info here https://acc.docs.attini.io/api-reference/cloudformation-configuration.html#framework-parameters
+    Type: String
+
+  ParameterKey:
+    Type: String
+
+Resources:
+
+  DeploymentPlan:
+    Type: Attini::Deploy::DeploymentPlan # https://docs.attini.io/api-reference/deployment-plan.html
+    Properties:
+      DeploymentPlan:
+        StartAt: Step1 # https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html
+        States:
+          Step1:
+            Type: AttiniCfn # https://docs.attini.io/api-reference/deployment-plan-types.html
+            Properties:
+              StackName: StackName # fill in your Cloudformation stack name
+              Template: /Template.yaml
+              # ExecutionRoleArn: Its recommended to use ExecutionRole or StackRole to create a "least privileged" deployment.
+              # Find more information here https://docs.attini.io/architecture/securing-the-framework.html#executionrole
+              Parameters:
+                ParameterValue: !Ref ParameterValue
+            End: True

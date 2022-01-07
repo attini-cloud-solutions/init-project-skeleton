@@ -1,0 +1,19 @@
+# https://docs.attini.io/api-reference/attini-configuration.html
+distributionName: hello-world
+initDeployConfig:
+  template: /deployment-plan.yaml
+  stackName: ${environment}-${distributionName}-init-deployment
+  parameters:
+    default:
+      parameterKey: parameterValue
+    environmentName:
+      parameterKey: parameterValue
+
+
+package: # When you use the Attini CLI to "package" a distribution, these instructions will be used, find more info here https://docs.attini.io/api-reference/attini-configuration.html
+  prePackage:
+    commands: # These shell commands will be executed on a temporary copy of your files so they will not effect your source files
+      - echo "Setting the distribution id to random"
+      - attini configure set-dist-id --random
+        # Using the Attini CLI to set the distribution id, if you use the "--id" flag instead of random you can set this to any value you want
+        # We recommend you to use something that can be linked to your source control, example a git commit
