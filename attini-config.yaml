@@ -1,5 +1,5 @@
 # https://docs.attini.io/api-reference/attini-configuration.html
-distributionName: hello-world
+distributionName: attini-skeleton
 initDeployConfig:
   template: /deployment-plan.yaml
   stackName: ${environment}-${distributionName}-init-deployment
