@@ -5,10 +5,11 @@ initDeployConfig:
   stackName: ${environment}-${distributionName}-init-deployment
   parameters:
     default:
-      parameterKey: parameterValue
-    environmentName:
-      parameterKey: parameterValue
-
+      ParameterKey: DefaultValue
+    dev:
+      ParameterKey: DevValue
+    production:
+      ParameterKey: ProductionValue
 
 package: # When you use the Attini CLI to "package" a distribution, these instructions will be used, find more info here https://docs.attini.io/api-reference/attini-configuration.html
   prePackage:
