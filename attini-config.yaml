@@ -2,7 +2,7 @@
 distributionName: attini-skeleton
 initDeployConfig:
   template: /deployment-plan.yaml
-  stackName: ${environment}-${distributionName}-init-deployment
+  stackName: ${environment}-${distributionName}-deployment-plan
   parameters:
     default:
       ParameterKey: DefaultValue
