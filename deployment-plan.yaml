@@ -6,7 +6,7 @@ Transform:
   - AWS::Serverless-2016-10-31
 
 Parameters:
-  AttiniEnvironmentName: # This is automatically configured by the Attini Framework, find more info here https://acc.docs.attini.io/api-reference/cloudformation-configuration.html#framework-parameters
+  AttiniEnvironmentName: # This is automatically configured by the Attini Framework, find more info here https://docs.attini.io/api-reference/cloudformation-configuration.html#framework-parameters
     Type: String
 
   ParameterKey:
