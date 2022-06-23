@@ -8,6 +8,8 @@ Find more information about the deployment plan [here](https://docs.attini.io/ap
 
 Find more information about the Init deployment [here](https://docs.attini.io/architecture/init-deploy.html "init deployment").
 
+---
+
 ## Deploy your first CloudFormation stack
 
 1. Open deployment-plan.yaml
@@ -16,29 +18,30 @@ Find more information about the Init deployment [here](https://docs.attini.io/ar
 
 3. Run `attini deploy run .`
 
+---
 
 ## Useful commands
 
 * On-broad/update the Attini framework with some useful default roles.
 
-      `attini setup --accept-license-agreement --create-deployment-plan-default-role --create-init-deploy-default-role`
+      attini setup --accept-license-agreement --create-deployment-plan-default-role --create-init-deploy-default-role
 
 * See information about your current environment.
 
-      `attini context`
+      attini context
 
 * Register a dev environment with Attini.
 
-      `attini environment create dev`
+      attini environment create dev
 
 * Package and deploy your current directory to dev.
 
-      `attini deploy run . -e dev`
+      attini deploy run . -e dev
 
 * Package a distribution from your current directory.
 
-      `attini package .`
+      attini package .
 
 * Deploy a distribution to a dev environment.
 
-      `attini deploy run attini_dist/[dist name].zip -e dev`
+      attini deploy run attini_dist/attini-skeleton.zip -e dev
