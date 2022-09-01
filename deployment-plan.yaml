@@ -24,7 +24,7 @@ Resources:
             Type: AttiniCfn # https://docs.attini.io/api-reference/deployment-plan-types.html
             Properties:
               StackName: StackName # fill in your Cloudformation stack name
-              Template: # /Template.yaml
+              Template: # Add your own template here, example:  /Template.yaml
               # ExecutionRoleArn: Its recommended to use ExecutionRole or StackRole to create a "least privileged" deployment. # Find more information here https://docs.attini.io/architecture/securing-the-framework.html#executionrole
               Parameters:
                 Parameter: !Ref ExampleParameter
