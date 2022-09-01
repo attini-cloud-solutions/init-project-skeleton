@@ -9,7 +9,7 @@ Parameters:
   AttiniEnvironmentName: # This is automatically configured by the Attini Framework, find more info here https://docs.attini.io/api-reference/cloudformation-configuration.html#framework-parameters
     Type: String
 
-  ParameterKey: # See attini-config.yaml initDeployConfig.parameters to find this configuration
+  Parameter: # See attini-config.yaml initDeployConfig.parameters to find this configuration
     Type: String
 
 Resources:
@@ -24,8 +24,8 @@ Resources:
             Type: AttiniCfn # https://docs.attini.io/api-reference/deployment-plan-types.html
             Properties:
               StackName: StackName # fill in your Cloudformation stack name
-              Template: /Template.yaml
+              Template: # /Template.yaml
               # ExecutionRoleArn: Its recommended to use ExecutionRole or StackRole to create a "least privileged" deployment. # Find more information here https://docs.attini.io/architecture/securing-the-framework.html#executionrole
               Parameters:
-                ParameterValue: !Ref ParameterValue
+                Parameter: !Ref Parameter
             End: True
