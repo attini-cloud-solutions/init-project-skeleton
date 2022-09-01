@@ -14,8 +14,8 @@ initDeployConfig:
   stackName: ${environment}-${distributionName}-deployment-plan
   parameters:
     default:
-      Parameter: DefaultValue
+      ExampleParameter: DefaultValue
     dev:
-      Parameter: DevValue
+      ExampleParameter: DevValue
     production:
-      Parameter: ProductionValue
+      ExampleParameter: ProductionValue
